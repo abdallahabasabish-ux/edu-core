@@ -7,9 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Link to="/" className="text-2xl font-bold text-primary">
-              EduCore
-            </Link>
+            <Link to="/" className="text-2xl font-bold text-primary">EduCore</Link>
             <p className="mt-2 text-sm text-muted-foreground max-w-xs">
               منصة متكاملة لإنشاء وإدارة المنصات التعليمية بسهولة.
             </p>
