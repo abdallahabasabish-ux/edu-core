@@ -2,14 +2,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import mockup from "@/assets/mockup.png"; // ضع صورة وهمية
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/50 py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* النص */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,20 +35,18 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Mockup */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-full">
-              <img
-                src={mockup}
-                alt="EduCore Platform Mockup"
-                className="rounded-2xl shadow-2xl border border-border/40"
-              />
-              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-transparent blur-3xl -z-10" />
+            <div className="relative mx-auto max-w-md lg:max-w-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 border border-border/40 shadow-2xl">
+              <div className="bg-white rounded-xl p-4 shadow-inner">
+                <div className="h-8 w-3/4 bg-primary/10 rounded mb-4" />
+                <div className="h-4 w-1/2 bg-primary/5 rounded mb-2" />
+                <div className="h-4 w-2/3 bg-primary/5 rounded" />
+              </div>
             </div>
           </motion.div>
         </div>
