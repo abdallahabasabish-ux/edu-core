@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { cn } from "@/lib/utils";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const navItems = [
   { label: "الرئيسية", href: "/" },
@@ -24,12 +19,10 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold text-primary">EduCore</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
@@ -42,19 +35,14 @@ export function Navbar() {
             ))}
             <div className="flex items-center gap-3">
               <Link to="/login">
-                <Button variant="ghost" size="sm">
-                  تسجيل الدخول
-                </Button>
+                <Button variant="ghost" size="sm">تسجيل الدخول</Button>
               </Link>
               <Link to="/register">
-                <Button size="sm" className="rounded-full">
-                  ابدأ الآن
-                </Button>
+                <Button size="sm" className="rounded-full">ابدأ الآن</Button>
               </Link>
             </div>
           </div>
 
-          {/* Mobile Drawer */}
           <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -81,9 +69,7 @@ export function Navbar() {
                 ))}
                 <div className="flex flex-col gap-3 mt-4">
                   <Link to="/login" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full">
-                      تسجيل الدخول
-                    </Button>
+                    <Button variant="outline" className="w-full">تسجيل الدخول</Button>
                   </Link>
                   <Link to="/register" onClick={() => setIsOpen(false)}>
                     <Button className="w-full">ابدأ الآن</Button>
